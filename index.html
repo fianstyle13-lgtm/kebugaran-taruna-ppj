@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AeroFit - Sistem pemantauan dan peningkatan kebugaran Taruna Politeknik Penerbangan Jayapura.">
+  <title>AeroFit | Kebugaran Taruna</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js" defer></script>
+  <script src="js/cloud.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/jadwal.js" defer></script>
+  <script src="js/hasil.js" defer></script>
+  <script src="js/rekomendasi.js" defer></script>
+  <script src="js/progres.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <div id="authScreen" class="auth-screen" aria-live="polite"></div>
+  <div class="app-shell" hidden>
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">A</div>
+        <div class="brand-copy">
+          <strong>AeroFit</strong>
+          <span>Taruna Fitness System</span>
+        </div>
+        <button class="icon-button sidebar-close" id="closeSidebar" aria-label="Tutup menu">×</button>
+      </div>
+
+      <div class="campus-label">
+        <span class="campus-dot"></span>
+        POLITEKNIK PENERBANGAN JAYAPURA
+      </div>
+
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <p class="nav-heading">MENU UTAMA</p>
+        <button class="nav-link active" data-page="dashboard">
+          <span class="nav-icon">▦</span><span>Dashboard</span>
+        </button>
+        <button class="nav-link" data-page="jadwal">
+          <span class="nav-icon">▣</span><span>Jadwal Latihan</span>
+        </button>
+        <button class="nav-link" data-page="hasil">
+          <span class="nav-icon">✓</span><span>Hasil Latihan</span>
+        </button>
+        <button class="nav-link" data-page="bidang">
+          <span class="nav-icon">◈</span><span>Bidang Kebugaran</span>
+        </button>
+        <button class="nav-link" data-page="rekomendasi">
+          <span class="nav-icon">✦</span><span>Rekomendasi</span>
+        </button>
+        <button class="nav-link" data-page="progres">
+          <span class="nav-icon">↗</span><span>Progres Kebugaran</span>
+        </button>
+
+        <p class="nav-heading nav-heading-spaced">PENGELOLAAN</p>
+        <button class="nav-link" data-page="taruna">
+          <span class="nav-icon">♙</span><span>Data Taruna</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-help">
+          <div class="help-icon">?</div>
+          <div>
+            <strong>Butuh bantuan?</strong>
+            <span>Hubungi admin/pelatih.</span>
+          </div>
+        </div>
+        <div class="sidebar-version">AeroFit · Tahap 6</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button menu-toggle" id="openSidebar" aria-label="Buka menu">☰</button>
+          <div>
+            <div class="breadcrumb">AeroFit <span>/</span> <strong id="breadcrumbCurrent">Dashboard</strong></div>
+            <p class="topbar-subtitle">Sistem Kebugaran Taruna</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="account-header">
+            <div class="user-avatar" id="userAvatar">A</div>
+            <div class="account-header-copy">
+              <strong id="accountName">Pengguna</strong>
+              <span id="accountRole">Taruna</span>
+            </div>
+          </div>
+          <button class="logout-button" id="logoutButton" type="button"><span>↪</span> Keluar</button>
+        </div>
+      </header>
+
+      <section class="page-container" id="pageContent" aria-live="polite">
+        <!-- Konten halaman dimuat oleh js/app.js -->
+      </section>
+
+      <footer class="page-footer">
+        <span>© 2026 AeroFit · Politeknik Penerbangan Jayapura</span>
+        <span>Build your fitness, improve your performance.</span>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
